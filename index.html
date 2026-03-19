@@ -2,65 +2,119 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scalyx - Agence d'automatisation IA</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-            },
-            colors: {
-              primary: '#4DA3FF',
-              dark: '#0F172A',
-            },
-            animation: {
-              'fade-up': 'fadeUp 0.8s ease-out forwards',
-              'float': 'float 6s ease-in-out infinite',
-              'marquee': 'marquee 40s linear infinite',
-            },
-            keyframes: {
-              fadeUp: {
-                '0%': { opacity: '0', transform: 'translateY(30px)', filter: 'blur(10px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)', filter: 'blur(0)' },
-              },
-              float: {
-                '0%, 100%': { transform: 'translateY(0)' },
-                '50%': { transform: 'translateY(-10px)' },
-              },
-              marquee: {
-                '0%': { transform: 'translateX(0)' },
-                '100%': { transform: 'translateX(-50%)' },
-              },
-            },
-          },
-        },
-      }
-    </script>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-      
-      body {
-        font-family: 'Inter', sans-serif;
-        -webkit-font-smoothing: antialiased;
-      }
-      
-      html {
-        scroll-behavior: smooth;
-      }
+    <meta name="robots" content="index, follow" />
 
-      /* Scrollbar hiding utility if needed */
-      .hide-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
-      .hide-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-    </style>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon-scalyx.png" />
+
+    <!-- Preconnect + Google Fonts (non-bloquant) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" />
+
+    <!-- Preload LCP -->
+    <link rel="preload" as="image" href="/logo-scalyx.png" />
+
+    <!-- Title -->
+    <title>Scalyx — Agence de communication Aix-en-Provence</title>
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://scalyx.fr" />
+
+    <!-- Meta description -->
+    <meta name="description" content="Scalyx gère vos réseaux sociaux, vos campagnes publicitaires et votre tunnel d'acquisition grâce à l'automatisation IA. Agence de communication basée à Aix-en-Provence, on accompagne les PME d'Aix et Marseille à générer plus de clients. Appel stratégique gratuit." />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Scalyx | L'agence qui transforme votre présence digitale en résultats concrets." />
+    <meta property="og:description" content="Scalyx gère vos réseaux sociaux, vos campagnes pub et votre tunnel d'acquisition grâce à l'automatisation IA. PME d'Aix-en-Provence et Marseille." />
+    <meta property="og:image" content="https://scalyx.fr/og-image.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://scalyx.fr" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <!-- Schema Markup Local -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Scalyx",
+      "url": "https://scalyx.fr",
+      "logo": "https://scalyx.fr/logo-scalyx.png",
+      "description": "Agence de communication à Aix-en-Provence spécialisée dans la gestion des réseaux sociaux, la création de tunnels d'acquisition et l'automatisation marketing IA pour les PME.",
+      "email": "contact@scalyx.fr",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Aix-en-Provence",
+        "postalCode": "13100",
+        "addressCountry": "FR"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "serviceType": [
+        "Agence de communication",
+        "Gestion réseaux sociaux",
+        "Tunnel d'acquisition",
+        "Campagnes publicitaires Meta et LinkedIn",
+        "Automatisation marketing IA"
+      ],
+      "areaServed": [
+        { "@type": "City", "name": "Aix-en-Provence" },
+        { "@type": "City", "name": "Marseille" }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/scalyx",
+        "https://www.linkedin.com/company/scalyx"
+      ]
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Combien coûte une agence de communication pour une PME à Aix-en-Provence ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Scalyx propose des plans adaptés aux PME à partir de 490 €/mois, incluant la gestion des réseaux sociaux, la création de contenu et le reporting mensuel."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Scalyx travaille-t-il uniquement à Aix-en-Provence ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Basée à Aix-en-Provence, Scalyx accompagne les PME de toute la région Aix-Marseille, ainsi que des clients en France entière pour les services digitaux."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "En combien de temps voit-on des résultats ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nos clients voient les premiers résultats mesurables dès J+30 : engagement, leads entrants, trafic qualifié. Les résultats business concrets arrivent entre J+30 et J+90 selon le plan choisi."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Peut-on arrêter à tout moment ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Aucun contrat longue durée, aucune pénalité. Vous résiliez avec 30 jours de préavis. On reste parce que ça fonctionne, pas par obligation."
+          }
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

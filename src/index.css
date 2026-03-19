@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Satoshi:wght@500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -15,11 +15,11 @@
   --light: #F8FAFC;
   /* Slate 50 */
   --white: #FFFFFF;
-  --text-main: #1E293B;
+  --text-main: #ffffff;
   --text-muted: #64748B;
 
   /* UI Colors */
-  --bg-color: #FFFFFF;
+  --bg-color: #0f1117;
   --surface-color: #F8FAFC;
   --border-color: #E2E8F0;
 
@@ -60,7 +60,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 700;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
   color: var(--dark);
   letter-spacing: -0.02em;
 }
@@ -198,4 +199,57 @@ h6 {
 
 .animate-marquee:hover {
   animation-play-state: paused;
+}
+
+/* Animated dashed border */
+@keyframes dash-march {
+  from { stroke-dashoffset: 0; }
+  to   { stroke-dashoffset: -40; }
+}
+.dash-border-rect {
+  stroke-dasharray: 1 7;
+  animation: dash-march 2.5s linear infinite;
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* Glow pulse — CTA button */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 16px rgba(21,72,93,0.4); }
+  50%       { box-shadow: 0 0 32px rgba(21,72,93,0.75), 0 0 60px rgba(44,200,220,0.15); }
+}
+.animate-glow-pulse {
+  animation: glow-pulse 2.8s ease-in-out infinite;
+}
+
+/* Gentle float — hero badge */
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-5px); }
+}
+.animate-float-gentle {
+  animation: float-gentle 4s ease-in-out infinite;
+}
+
+/* Shimmer border — pricing highlight */
+@keyframes border-shimmer {
+  0%   { opacity: 0.5; }
+  50%  { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+.animate-border-shimmer {
+  animation: border-shimmer 2.5s ease-in-out infinite;
 }
