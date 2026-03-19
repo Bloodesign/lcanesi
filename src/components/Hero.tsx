@@ -57,7 +57,7 @@ const Hero = () => {
                     <div className="flex flex-col items-center gap-1">
                         <div className="flex items-center -space-x-2">
                             {clientLogos.map((logo, index) => (
-                                <img key={index} src={logo} alt="Résultat client PME - Scalyx agence de communication Aix-en-Provence" className="w-8 h-8 rounded-full object-cover border-2 border-white shadow-md" width="32" height="32" loading="lazy" />
+                                <img key={index} src={logo} alt="Résultat client PME - Scalyx agence de communication Aix-en-Provence" className="w-8 h-8 rounded-full object-cover border-2 border-white shadow-md bg-white" width="32" height="32" loading="lazy" />
                             ))}
                         </div>
                         <div className="flex items-center gap-1.5">
