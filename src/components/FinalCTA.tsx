@@ -33,7 +33,7 @@ const FinalCTA = () => {
                             </span>
                         </div>
 
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight mb-6">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white leading-tight mb-6">
                             Prêt à faire de votre <span className="text-[#2cc8dc]">marketing</span><br />votre meilleur commercial ?
                         </h2>
 
