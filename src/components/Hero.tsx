@@ -81,7 +81,7 @@ const Hero = () => {
 
                 {/* Subtitle */}
                 <p className="text-sm md:text-base text-white/60 mb-6 max-w-2xl mx-auto leading-relaxed font-normal animate-fade-up" style={{ animationDelay: '0.4s' }}>
-                    Basée à Aix-en-Provence, on accompagne les PME d'Aix et Marseille à générer plus de clients grâce au digital et à l'automatisation IA.
+                    Boostez votre clientèle locale : Scalyx, votre partenaire digital à Aix-Marseille pour une croissance PME accélérée par l'IA.
                 </p>
 
                 {/* CTA Buttons */}
@@ -90,7 +90,7 @@ const Hero = () => {
                         href="https://calendly.com/nicolas-scalyx/30min" target="_blank" rel="noopener noreferrer"
                         className="group relative inline-flex items-center justify-center px-6 py-3 font-semibold text-white transition-all duration-300 bg-[#15485d] rounded-full hover:bg-[#15485d] active:scale-95 text-base border-2 border-dotted border-white/40 animate-glow-pulse"
                     >
-                        Réserver un appel
+                        Démarrez votre transformation digitale
                     </a>
                     <a
                         href="/portfolio"

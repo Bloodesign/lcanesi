@@ -41,7 +41,7 @@ const FinalCTA = () => {
                         <div className="flex items-center gap-3">
                             <img src="/personne 1.jpg" alt="Résultat client PME - Scalyx agence de communication Aix-en-Provence" className="w-9 h-9 rounded-full object-cover border-2 border-white/10 flex-shrink-0" width="36" height="36" loading="lazy" />
                             <div>
-                                <p className="text-white/50 text-xs italic leading-relaxed">"Résultats visibles dès le premier mois. Campagnes pro et réactives."</p>
+                                <p className="text-white/50 text-xs italic leading-relaxed">"Scalyx a boosté nos résultats dès le premier mois grâce à des campagnes pro et réactives."</p>
                                 <div className="flex items-center gap-2 mt-1">
                                     <span className="text-white/80 text-xs font-semibold">LC Cession</span>
                                     <div className="flex gap-0.5">

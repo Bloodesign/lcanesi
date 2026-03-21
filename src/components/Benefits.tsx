@@ -80,7 +80,7 @@ const Benefits = () => {
                 {/* Pain Points */}
                 <div className="text-center max-w-2xl mx-auto mb-12 reveal">
                     <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
-                        Ce que nos clients <span className="text-[#2cc8dc]">vivaient</span> avant de nous rejoindre
+                        Vos Problèmes, nos Solutions : <span className="text-[#2cc8dc]">Avant Scalyx</span>, le Digital était un Défi.
                     </h2>
                 </div>
 

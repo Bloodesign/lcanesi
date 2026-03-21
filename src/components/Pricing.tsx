@@ -5,7 +5,8 @@ const plans = [
         target: "PME · Indépendants",
         name: "STARTER",
         tagline: "On construit votre présence et on la fait vivre chaque mois.",
-        price: "490",
+        price: "790",
+        firstMonthPrice: "1 500",
         groups: [
             {
                 label: "Votre présence",
@@ -26,7 +27,7 @@ const plans = [
                 ]
             }
         ],
-        cta: "Démarrer en Starter",
+        cta: "Je préfère le plan Starter",
         highlight: false,
         accentColor: "text-white/70",
         ctaClass: "bg-white/10 text-white hover:bg-white/15 border border-white/20"
@@ -35,7 +36,8 @@ const plans = [
         target: "LE PLUS POPULAIRE",
         name: "GROWTH",
         tagline: "Un système complet pour attirer des visiteurs, les capturer et les convertir en clients.",
-        price: "990",
+        price: "1 200",
+        firstMonthPrice: "2 500",
         groups: [
             {
                 label: "Votre tunnel d'acquisition",
@@ -61,7 +63,7 @@ const plans = [
                 ]
             }
         ],
-        cta: "Je veux le plan Growth",
+        cta: "Je préfère le plan Growth",
         highlight: true,
         accentColor: "text-[#2cc8dc]",
         ctaClass: "bg-[#15485d] text-white hover:brightness-110 shadow-[0_0_24px_rgba(21,72,93,0.6)] border-2 border-dotted border-white/30"
@@ -71,6 +73,7 @@ const plans = [
         name: "PREMIUM",
         tagline: "Un département marketing externalisé, piloté par l'IA, qui génère des clients en continu.",
         price: "Sur devis",
+        firstMonthPrice: "5 000",
         groups: [
             {
                 label: "Votre système d'acquisition",
@@ -138,16 +141,24 @@ const Pricing = () => {
                                 </div>
                                 <div className="flex items-end justify-between">
                                     <h3 className="text-xl font-black text-white tracking-tight">{plan.name}</h3>
-                                    <div className="flex items-end gap-1">
-                                        <span className={`text-2xl font-black leading-none ${plan.accentColor}`}>
-                                            {plan.name === 'PREMIUM' ? 'Sur devis' : `${plan.price} €`}
-                                        </span>
-                                        {plan.name !== 'PREMIUM' && <span className="text-white/40 text-[11px] mb-0.5">/mois</span>}
+                                    <div className="flex flex-col items-end gap-0.5">
+                                        <span className="text-white/30 text-[9px]">À partir de</span>
+                                        <span className="text-white/60 text-[11px] font-semibold">{plan.firstMonthPrice} € le 1er mois</span>
+                                        {plan.name !== 'PREMIUM' ? (
+                                            <div className="flex items-end gap-1 mt-0.5">
+                                                <span className="text-white/30 text-[10px] mb-0.5">puis</span>
+                                                <span className={`text-2xl font-black leading-none ${plan.accentColor}`}>{plan.price} €</span>
+                                                <span className="text-white/40 text-[11px] mb-0.5">/mois</span>
+                                            </div>
+                                        ) : (
+                                            <div className="flex items-end gap-1 mt-0.5">
+                                                <span className="text-white/30 text-[10px] mb-0.5">puis</span>
+                                                <span className={`text-2xl font-black leading-none ${plan.accentColor}`}>2 500 €</span>
+                                                <span className="text-white/40 text-[11px] mb-0.5">/mois</span>
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
-                                {plan.name === 'PREMIUM' && (
-                                    <p className="text-white/30 text-[10px] mt-0.5 text-right">à partir de 2 000 €/mois</p>
-                                )}
                             </div>
 
                             {/* Divider */}
