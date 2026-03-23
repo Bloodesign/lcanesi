@@ -16,7 +16,7 @@ const Header = () => {
 
                 {/* CTA — always visible */}
                 <a href="https://calendly.com/nicolas-scalyx/30min" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#15485d] text-white text-xs font-semibold transition-all duration-300 shadow-lg border-2 border-dotted border-white flex-shrink-0">
-                    Réserver un appel
+                    Réservez votre audit gratuit
                     <ArrowUpRight className="w-3 h-3" />
                 </a>
             </div>

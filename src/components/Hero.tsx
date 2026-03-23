@@ -33,7 +33,7 @@ const Hero = () => {
     }, []);
 
     return (
-        <section className="relative pt-28 pb-16 lg:pt-36 lg:pb-20 overflow-hidden bg-[#0f1117]">
+        <section className="relative min-h-[90vh] flex flex-col justify-center pt-36 pb-10 overflow-hidden bg-[#0f1117]">
             {/* Background Grid Pattern */}
             <div className="absolute inset-0 z-0 pointer-events-none opacity-30">
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
@@ -88,13 +88,13 @@ const Hero = () => {
                 <div className="flex flex-row items-center justify-center gap-3 animate-fade-up" style={{ animationDelay: '0.6s' }}>
                     <a
                         href="https://calendly.com/nicolas-scalyx/30min" target="_blank" rel="noopener noreferrer"
-                        className="group relative inline-flex items-center justify-center px-6 py-3 font-semibold text-white transition-all duration-300 bg-[#15485d] rounded-full hover:bg-[#15485d] active:scale-95 text-base border-2 border-dotted border-white/40 animate-glow-pulse"
+                        className="group relative inline-flex items-center justify-center px-4 py-2 font-semibold text-white transition-all duration-300 bg-[#15485d] rounded-full hover:bg-[#15485d] active:scale-95 text-xs border-2 border-dotted border-white/40 animate-glow-pulse"
                     >
-                        Démarrez votre transformation digitale
+                        Réservez votre audit gratuit
                     </a>
                     <a
                         href="/portfolio"
-                        className="inline-flex items-center justify-center gap-2 px-6 py-3 font-semibold text-white transition-all duration-300 rounded-full text-base border border-white/40 hover:border-white hover:bg-white/5 active:scale-95"
+                        className="inline-flex items-center justify-center gap-2 px-4 py-2 font-semibold text-white transition-all duration-300 rounded-full text-xs border border-white/40 hover:border-white hover:bg-white/5 active:scale-95"
                     >
                         Nos réalisations
                     </a>

@@ -74,7 +74,7 @@ const Benefits = () => {
     }, [active]);
 
     return (
-        <section id="services" className="section bg-[#0f1117] relative overflow-hidden mt-16">
+        <section id="services" className="section bg-[#0f1117] relative overflow-hidden mt-4">
             <div className="container relative z-10">
 
                 {/* Pain Points */}
