@@ -7,9 +7,15 @@ interface PreloaderProps {
 const Preloader = ({ onComplete }: PreloaderProps) => {
     const [progress, setProgress] = useState(0);
     const [isFading, setIsFading] = useState(false);
+    const [showTagline, setShowTagline] = useState(false);
 
     useEffect(() => {
-        const duration = 1600;
+        const taglineTimer = setTimeout(() => setShowTagline(true), 300);
+        return () => clearTimeout(taglineTimer);
+    }, []);
+
+    useEffect(() => {
+        const duration = 1400;
         const intervalTime = 16;
         const steps = duration / intervalTime;
         const increment = 100 / steps;
@@ -27,7 +33,7 @@ const Preloader = ({ onComplete }: PreloaderProps) => {
 
         const completeTimer = setTimeout(() => {
             setIsFading(true);
-            setTimeout(onComplete, 700);
+            setTimeout(onComplete, 400);
         }, duration);
 
         return () => {
@@ -37,69 +43,61 @@ const Preloader = ({ onComplete }: PreloaderProps) => {
     }, [onComplete]);
 
     const p = Math.min(progress, 100);
-    const circumference = 2 * Math.PI * 36;
-    const strokeDashoffset = circumference - (p / 100) * circumference;
 
     return (
         <div
-            className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#0f1117] transition-all duration-700 ease-in-out ${isFading ? 'opacity-0 scale-105 pointer-events-none' : 'opacity-100 scale-100'}`}
+            className={`fixed inset-0 z-[200] flex flex-col items-center justify-center transition-all duration-400 ease-in-out ${isFading ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
+            style={{ background: 'linear-gradient(135deg, #0d1f3c 0%, #1B3A6B 100%)' }}
         >
-            {/* Ambient glow */}
-            <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#15485d]/20 rounded-full blur-[120px]" />
+            {/* Ambient orbs */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                <div className="absolute left-1/4 top-1/3 w-[500px] h-[500px] bg-[#C9963B]/8 rounded-full blur-[140px]" />
+                <div className="absolute right-1/4 bottom-1/3 w-[400px] h-[400px] bg-[#1B3A6B]/40 rounded-full blur-[120px]" />
             </div>
 
-            <div className="relative flex flex-col items-center gap-8 z-10">
-                {/* Ring + Logo */}
-                <div className="relative flex items-center justify-center">
-                    {/* Spinning ring */}
-                    <svg width="96" height="96" viewBox="0 0 96 96" className="-rotate-90">
-                        {/* Track */}
-                        <circle
-                            cx="48" cy="48" r="36"
-                            fill="none"
-                            stroke="rgba(255,255,255,0.06)"
-                            strokeWidth="2"
-                        />
-                        {/* Progress arc */}
-                        <circle
-                            cx="48" cy="48" r="36"
-                            fill="none"
-                            stroke="#2cc8dc"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeDasharray={circumference}
-                            strokeDashoffset={strokeDashoffset}
-                            style={{ transition: 'stroke-dashoffset 0.05s linear' }}
-                        />
-                    </svg>
+            <div className="relative z-10 flex flex-col items-center px-8 text-center">
 
-                    {/* Logo centré dans le ring */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <img
-                            src="/logo-scalyx.png"
-                            alt="Scalyx"
-                            className="h-8 w-auto"
-                        />
-                    </div>
+                {/* Logo */}
+                <div
+                    className="mb-10 transition-all duration-700"
+                    style={{ opacity: showTagline ? 1 : 0, transform: showTagline ? 'translateY(0)' : 'translateY(-12px)' }}
+                >
+                    <span
+                        className="text-3xl font-bold text-white tracking-tight"
+                        style={{ fontFamily: 'Montserrat, sans-serif' }}
+                    >
+                        Lionel Canesi
+                    </span>
+                    <div className="mt-1.5 h-px w-full bg-gradient-to-r from-transparent via-[#C9963B]/60 to-transparent" />
                 </div>
 
-                {/* Pourcentage */}
-                <div className="flex flex-col items-center gap-1">
-                    <span
-                        className="text-5xl font-black tracking-tight text-white tabular-nums"
-                        style={{ fontFamily: 'Syne, sans-serif' }}
+                {/* Tagline */}
+                <div
+                    className="mb-14 transition-all duration-700 delay-200"
+                    style={{ opacity: showTagline ? 1 : 0, transform: showTagline ? 'translateY(0)' : 'translateY(12px)' }}
+                >
+                    <p
+                        className="text-white/80 text-base md:text-lg font-medium leading-relaxed max-w-sm"
+                        style={{ fontFamily: 'Montserrat, sans-serif' }}
                     >
-                        {Math.round(p)}<span className="text-[#2cc8dc] text-3xl">%</span>
-                    </span>
+                        Votre cabinet mérite<br />
+                        <span className="text-[#C9963B] italic">une direction claire.</span>
+                    </p>
+                </div>
 
-                    {/* Barre fine */}
-                    <div className="w-32 h-px bg-white/10 rounded-full overflow-hidden mt-2">
+                {/* Progress bar */}
+                <div className="w-48 flex flex-col items-center gap-3">
+                    <div className="w-full h-[2px] bg-white/10 rounded-full overflow-hidden">
                         <div
-                            className="h-full bg-gradient-to-r from-[#15485d] to-[#2cc8dc] rounded-full"
-                            style={{ width: `${p}%`, transition: 'width 0.05s linear' }}
+                            className="h-full rounded-full"
+                            style={{
+                                width: `${p}%`,
+                                background: 'linear-gradient(to right, #C9963B, #e8b96a)',
+                                transition: 'width 0.05s linear',
+                            }}
                         />
                     </div>
+                    <span className="text-white/30 text-xs font-mono tabular-nums">{Math.round(p)}%</span>
                 </div>
             </div>
         </div>

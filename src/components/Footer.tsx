@@ -1,13 +1,18 @@
-
 const Footer = () => {
     return (
-        <footer className="bg-[#0f1117] py-6 sm:py-8 border-t border-white/10">
-            <div className="container flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0">
-                <div className="flex flex-col items-center sm:items-start">
-                    <img src="/logo-scalyx.png" alt="Scalyx - Agence de communication Aix-en-Provence" className="h-9 sm:h-12 w-auto mb-1.5" width="120" height="48" loading="lazy" />
-                    <p className="text-white/40 text-xs">© {new Date().getFullYear()} Scalyx. Tous droits réservés.</p>
+        <footer style={{ backgroundColor: '#0d1f3c' }} className="py-10">
+            <div className="container">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div className="flex flex-col items-center sm:items-start gap-1">
+                        <span className="text-white font-bold text-base tracking-tight" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                            Lionel Canesi
+                        </span>
+                        <p className="text-white/30 text-xs">© {new Date().getFullYear()} LC Cession — Site réalisé par Scalyx</p>
+                    </div>
+                    <a href="/mentions-legales.html" className="text-white/30 text-xs hover:text-white/60 transition-colors">
+                        Mentions légales
+                    </a>
                 </div>
-                <a href="/mentions-legales.html" className="text-white/40 text-sm hover:text-[#2cc8dc] transition-colors sm:mr-20">Mentions Légales</a>
             </div>
         </footer>
     );

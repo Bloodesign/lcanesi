@@ -1,177 +1,170 @@
-import { useEffect, useRef, useState } from 'react';
-import { Zap, Camera, MapPin, BarChart2 } from 'lucide-react';
+import { useState } from 'react';
 
 const painPoints = [
     {
-        title: "Aucun tunnel d'acquisition qui convertit",
-        description: "Pas de landing page optimisée, pas de séquence email, pas de système pour transformer un visiteur en client. Le trafic arrivait… et repartait."
+        num: "01",
+        title: "Vous gérez. Mais pilotez-vous vraiment ?",
+        description: "Les urgences clients et le poids des tâches administratives écrasent tout le reste… La question «où est-ce que je veux emmener ce cabinet dans 5 ans ?» reste sans réponse. Ce n'est pas un manque de volonté. C'est un manque d'espace pour y penser. Et pendant ce temps, les décisions se prennent d'elles-mêmes."
     },
     {
-        title: "Un contenu qui n'amenait aucun résultat",
-        description: "Des posts publiés sans stratégie. Un feed qui ne reflétait pas la qualité de l'offre. Zéro engagement, zéro conversion."
+        num: "02",
+        title: "Les fonds d'investissement s'organisent. Pendant que vous attendez.",
+        description: "Ils ont compris avant tout le monde que la profession était sous-consolidée. Ils ont des plateformes, des outils IA, des capacités de recrutement que peu de cabinets peuvent financer seuls. Les libéraux qui ne s'organisent pas maintenant se retrouveront à contre-courant. La transformation numérique n'attend pas les indécis."
     },
     {
-        title: "Un budget investi sans visibilité",
-        description: "De l'argent dépensé en ads, en freelances, en outils — sans savoir ce que ça rapportait vraiment. Aucun reporting clair."
+        num: "03",
+        title: "La facture électronique va changer les fondamentaux de la profession.",
+        description: "Aujourd'hui l'expert-comptable est le seul détenteur de la facture qu'il transforme par sa science en un outil de gestion qu'est la comptabilité. Avec la facture électronique, la donne va changer. Les honoraires de comptabilité qui forment actuellement le socle du chiffre d'affaires du cabinet vont chuter. Il faut refonder le modèle économique du cabinet en restant fort sur les fondamentaux de l'accompagnement stratégique des entrepreneurs."
     },
     {
-        title: "Une présence digitale inexistante ou incohérente",
-        description: "Fiche Google à l'abandon, réseaux sociaux mal gérés, aucune stratégie locale. Les clients potentiels ne les trouvaient pas — ou ne leur faisaient pas confiance."
+        num: "04",
+        title: "Un plan stratégique sur 5 ans.",
+        description: "Il est essentiel aujourd'hui pour le cabinet de disposer d'un plan stratégique à 5 ans intégrant les évolutions technologiques, l'intégration de nouveaux profils collaborateurs, le développement de nouvelles missions, la mise en place marketing de l'offre du cabinet."
     }
 ];
 
 const solutions = [
     {
-        icon: Zap,
-        tag: "Acquisition",
-        title: "Un tunnel qui transforme vos visiteurs en clients",
-        description: "Landing page orientée conversion + formulaire de capture + séquence email automatisée. Vos visiteurs deviennent des leads, vos leads deviennent des clients."
+        tag: "Vision stratégique",
+        label: "VISION STRATÉGIQUE",
+        title: "Vision stratégique partagée sur mesure.",
+        benefit: "Nous posons ensemble votre stratégie à 5 ans en fonction des spécificités de votre cabinet. Agir plutôt que subir. Beaucoup d'experts-comptables pensent mettre en place un plan stratégique mais le temps manque sous la pression des clients, des échéances, des tâches administratives, des imprévus…",
+        outcomes: []
     },
     {
-        icon: Camera,
-        tag: "Contenu",
-        title: "Du contenu créé pour vous chaque mois",
-        description: "1 journée shooting/mois (photo, vidéo) + publications rédigées + visuels professionnels. Vous n'avez rien à faire — on livre, vous validez."
+        tag: "Évolutions numériques",
+        label: "ÉVOLUTIONS NUMÉRIQUES",
+        title: "Évolutions numériques.",
+        benefit: "IA, data, facture électronique… Une révolution en marche qui va changer une partie du métier. L'objectif est d'intégrer dans votre plan stratégique les évolutions numériques pour se les approprier plutôt que de les subir.",
+        outcomes: []
     },
     {
-        icon: MapPin,
-        tag: "Présence",
-        title: "Votre présence locale et sociale gérée",
-        description: "Fiche Google optimisée, réseaux sociaux animés chaque semaine. Vos clients vous trouvent, vous reconnaissent, vous font confiance."
+        tag: "Marketing & Communication",
+        label: "MARKETING & COMMUNICATION",
+        title: "Stratégie marketing et communication.",
+        benefit: "La profession manque d'appétence pour la communication. Il est essentiel de faire connaître son savoir-faire et son offre de missions en dehors des missions traditionnelles. Stratégies de communication par la facturation clients, présence sur les réseaux sociaux, développement de la marque employeur, mise en place d'une stratégie marketing.",
+        outcomes: []
     },
     {
-        icon: BarChart2,
-        tag: "Publicité",
-        title: "Des campagnes pub qui amènent du trafic qualifié",
-        description: "Meta Ads, LinkedIn Ads — configurées, testées, optimisées en continu. Chaque euro investi est tracé et reporté."
-    }
+        tag: "Suivi & Engagements",
+        label: "SUIVI & ENGAGEMENTS",
+        title: "Suivi et engagements.",
+        benefit: "Un suivi personnalisé et individualisé est essentiel dans la mise en place du plan stratégique. Nous construirons ensemble votre plan stratégique.",
+        outcomes: []
+    },
 ];
-
-const INTERVAL = 3500;
 
 const Benefits = () => {
     const [active, setActive] = useState(0);
-    const [progress, setProgress] = useState(0);
-    const triggerRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        let start: number;
-        let raf: number;
-
-        const step = (ts: number) => {
-            if (!start) start = ts;
-            const elapsed = ts - start;
-            setProgress(Math.min((elapsed / INTERVAL) * 100, 100));
-            if (elapsed >= INTERVAL) {
-                setActive(prev => (prev + 1) % solutions.length);
-                start = ts;
-            }
-            raf = requestAnimationFrame(step);
-        };
-
-        raf = requestAnimationFrame(step);
-        return () => cancelAnimationFrame(raf);
-    }, [active]);
 
     return (
-        <section id="services" className="section bg-[#0f1117] relative overflow-hidden mt-4">
-            <div className="container relative z-10">
+        <>
+            {/* ── SECTION PROBLÈMES ── */}
+            <section id="services" className="bg-[#F8F7F4] py-16 md:py-24 md:pt-36">
+                <div className="container">
+                    <div className="max-w-3xl mx-auto mb-16 reveal-left">
+                        <p className="text-[#C9963B] text-xs font-bold uppercase tracking-widest mb-3">CE QUE VIVENT LES DIRIGEANTS</p>
+                        <h2 className="text-2xl md:text-3xl font-bold text-[#111827] leading-snug" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                            Ces questions que vous portez seul,{' '}
+                            <span className="text-[#1B3A6B]">depuis trop longtemps.</span>
+                        </h2>
+                    </div>
 
-                {/* Pain Points */}
-                <div className="text-center max-w-2xl mx-auto mb-12 reveal">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
-                        Vos Problèmes, nos Solutions : <span className="text-[#2cc8dc]">Avant Scalyx</span>, le Digital était un Défi.
-                    </h2>
-                </div>
-
-                <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-12">
-                    {painPoints.map((point, index) => (
-                        <div
-                            key={index}
-                            className="group bg-[#1a1f2e] p-5 rounded-2xl border border-white/10 transition-all duration-500 hover:-translate-y-1 hover:border-[#15485d]/30 relative overflow-hidden"
-                        >
-                            <div className="flex items-start gap-3">
-                                <span className="w-2 h-2 mt-1.5 rounded-full bg-[#15485d] flex-shrink-0"></span>
+                    <div className="max-w-3xl mx-auto divide-y divide-gray-200">
+                        {painPoints.map((p, i) => (
+                            <div key={i} className="group py-8 flex gap-6 sm:gap-10 items-start">
+                                <span className="text-3xl font-bold text-[#1B3A6B]/15 group-hover:text-[#1B3A6B]/30 transition-colors duration-300 flex-shrink-0 font-mono leading-none pt-1">
+                                    {p.num}
+                                </span>
                                 <div>
-                                    <h3 className="text-base font-bold text-white mb-1">{point.title}</h3>
-                                    <p className="text-white/50 text-sm leading-relaxed font-light">{point.description}</p>
+                                    <h3 className="text-base font-bold text-[#111827] mb-2 group-hover:text-[#1B3A6B] transition-colors duration-300">
+                                        {p.title}
+                                    </h3>
+                                    <p className="text-[#6B7280] text-sm leading-relaxed">{p.description}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* ── SECTION SOLUTIONS ── */}
+            <section className="bg-white py-24">
+                <div className="container">
+                    <div className="max-w-5xl mx-auto">
+                        <div className="mb-14 reveal-left">
+                            <p className="text-[#C9963B] text-xs font-bold uppercase tracking-widest mb-3">L'ACCOMPAGNEMENT</p>
+                            <h2 className="text-2xl md:text-3xl font-bold text-[#111827]" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                                Ce que vous allez <span className="text-[#1B3A6B]">concrètement obtenir</span>
+                            </h2>
+                            <p className="text-[#6B7280] text-sm mt-3 max-w-xl">
+                                Chaque volet de l'accompagnement est conçu pour que vous repartiez avec quelque chose d'utilisable. Pas des diapositives.
+                            </p>
+                        </div>
+
+                        <div className="flex flex-col md:flex-row gap-6 md:gap-8">
+
+                            {/* Tabs — colonne gauche */}
+                            <div className="flex flex-row md:flex-col gap-2 md:w-56 flex-shrink-0 overflow-x-auto md:overflow-visible pb-1 md:pb-0">
+                                {solutions.map((sol, i) => {
+                                    return (
+                                        <button
+                                            key={i}
+                                            onClick={() => setActive(i)}
+                                            className={`px-4 py-3 rounded-xl text-xs font-semibold text-left transition-all duration-200 whitespace-nowrap md:whitespace-normal flex-shrink-0 md:flex-shrink ${
+                                                active === i
+                                                    ? 'bg-[#1B3A6B] text-white shadow-md'
+                                                    : 'bg-[#F8F7F4] text-[#6B7280] hover:bg-[#EEF1F7] hover:text-[#1B3A6B]'
+                                            }`}
+                                        >
+                                            {sol.tag}
+                                        </button>
+                                    );
+                                })}
+                            </div>
+
+                            {/* Content — colonne droite */}
+                            <div className="flex-1 relative">
+                                <div className="rounded-2xl border border-gray-100 bg-white shadow-sm overflow-hidden min-h-[200px]">
+
+                                    {solutions.map((sol, i) => {
+                                            return (
+                                            <div
+                                                key={i}
+                                                style={{
+                                                    opacity: active === i ? 1 : 0,
+                                                    transform: active === i ? 'translateY(0)' : 'translateY(8px)',
+                                                    transition: 'opacity 0.35s ease, transform 0.35s ease',
+                                                    position: active === i ? 'relative' : 'absolute',
+                                                    inset: 0,
+                                                }}
+                                                className="p-8"
+                                            >
+                                                <div className="mb-4">
+                                                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#1B3A6B]/40">{sol.label}</span>
+                                                </div>
+
+                                                <h3 className="text-lg sm:text-xl font-bold text-[#111827] mb-3 leading-snug" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                                                    {sol.title}
+                                                </h3>
+
+                                                <p className="text-[#6B7280] text-sm leading-relaxed mb-5">{sol.benefit}</p>
+
+                                                <div className="space-y-1.5">
+                                                    {sol.outcomes.map((o, oi) => (
+                                                        <p key={oi} className="text-[#374151] text-sm">{o}</p>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
                                 </div>
                             </div>
                         </div>
-                    ))}
-                </div>
-
-                <div className="mb-44" />
-
-                {/* Solutions */}
-                <div className="text-center max-w-3xl mx-auto mb-10 reveal">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-2 text-white">
-                        Ce que Scalyx <span className="text-[#2cc8dc]">met en place</span> pour vous
-                    </h2>
-                </div>
-
-                <div ref={triggerRef} className="max-w-3xl mx-auto">
-                    {/* Tabs */}
-                    <div className="flex flex-wrap gap-2 mb-6">
-                        {solutions.map((sol, index) => {
-                            const Icon = sol.icon;
-                            return (
-                                <button
-                                    key={index}
-                                    onClick={() => { setActive(index); setProgress(0); }}
-                                    className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold transition-all duration-300 ${
-                                        active === index
-                                            ? 'bg-[#15485d] text-white'
-                                            : 'bg-white/5 text-white/40 hover:bg-white/10 hover:text-white/70'
-                                    }`}
-                                >
-                                    <Icon className="w-3.5 h-3.5" />
-                                    {sol.tag}
-                                </button>
-                            );
-                        })}
-                    </div>
-
-                    {/* Content */}
-                    <div className="relative rounded-2xl border border-white/10 bg-[#1a1f2e] overflow-hidden">
-                        {/* Progress bar */}
-                        <div className="absolute top-0 left-0 h-[2px] bg-[#2cc8dc]/30 w-full">
-                            <div
-                                className="h-full bg-[#2cc8dc] transition-none"
-                                style={{ width: `${progress}%` }}
-                            />
-                        </div>
-
-                        {solutions.map((sol, index) => {
-                            const Icon = sol.icon;
-                            return (
-                                <div
-                                    key={index}
-                                    style={{
-                                        opacity: active === index ? 1 : 0,
-                                        transform: active === index ? 'translateY(0)' : 'translateY(10px)',
-                                        transition: 'opacity 0.4s ease, transform 0.4s ease',
-                                        position: active === index ? 'relative' : 'absolute',
-                                        inset: 0,
-                                    }}
-                                    className="p-8"
-                                >
-                                    <div className="flex items-center gap-3 mb-4">
-                                        <div className="w-10 h-10 rounded-xl bg-[#15485d]/40 border border-[#15485d]/50 flex items-center justify-center">
-                                            <Icon className="w-5 h-5 text-[#2cc8dc]" />
-                                        </div>
-                                        <span className="text-xs font-bold uppercase tracking-widest text-[#2cc8dc]/70">{sol.tag}</span>
-                                    </div>
-                                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 leading-snug">{sol.title}</h3>
-                                    <p className="text-white/50 text-sm leading-relaxed max-w-xl">{sol.description}</p>
-                                </div>
-                            );
-                        })}
                     </div>
                 </div>
-
-            </div>
-        </section>
+            </section>
+        </>
     );
 };
 

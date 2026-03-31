@@ -1,34 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  /* Branding Colors */
-  /* Branding Colors */
-  --primary: #4DA3FF;
-  /* Bright Blue */
-  --primary-light: #8DC1FF;
-  --dark: #0F172A;
-  /* Slate 900 */
-  --light: #F8FAFC;
-  /* Slate 50 */
+  --navy: #1B3A6B;
+  --navy-light: #2A5298;
+  --gold: #C9963B;
+  --dark: #111827;
+  --muted: #6B7280;
+  --offwhite: #F8F7F4;
+  --border: #E5E7EB;
   --white: #FFFFFF;
-  --text-main: #ffffff;
-  --text-muted: #64748B;
-
-  /* UI Colors */
-  --bg-color: #0f1117;
-  --surface-color: #F8FAFC;
-  --border-color: #E2E8F0;
-
-  /* Typography */
-  --font-main: 'Inter', sans-serif;
-  --font-heading: 'Inter', sans-serif;
-  /* Fallback to Inter if Satoshi isn't available via Google Fonts easily. Actually, I'll use Inter for now as Satoshi is usually custom hosted, but I will simulate the feel. */
-
-  /* Spacing & grid */
   --container-width: 1280px;
   --header-height: 80px;
 }
@@ -46,34 +30,20 @@ html {
 }
 
 body {
-  font-family: var(--font-main);
-  background-color: var(--bg-color);
-  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  background-color: #FFFFFF;
+  color: var(--dark);
   line-height: 1.5;
   overflow-x: hidden;
 }
 
-/* Typography Utilities */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-weight: 700;
   color: var(--dark);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
-.text-gradient {
-  background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Layout Utilities */
 .container {
   max-width: var(--container-width);
   margin: 0 auto;
@@ -81,175 +51,122 @@ h6 {
 }
 
 .section {
-  padding: 100px 0;
-}
-
-/* Background Grid */
-.bg-grid {
-  background-size: 50px 50px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
-  mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
-}
-
-/* Buttons */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 16px 32px;
-  font-weight: 600;
-  border-radius: 99px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 1rem;
-}
-
-.btn-primary {
-  background-color: var(--dark);
-  color: var(--white);
-  border: 1px solid var(--dark);
-}
-
-.btn-primary:hover {
-  background-color: var(--primary);
-  border-color: var(--primary);
-  box-shadow: 0 10px 30px -5px rgba(77, 163, 255, 0.6);
-  transform: translateY(-2px);
-}
-
-.btn-secondary {
-  background-color: var(--white);
-  color: var(--dark);
-  border: 1px solid var(--border-color);
-}
-
-.btn-secondary:hover {
-  background-color: var(--surface-color);
-  border-color: var(--dark);
-  transform: translateY(-2px);
-}
-
-/* Animations */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-    filter: blur(10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-  }
-}
-
-.animate-fade-up {
-  animation: fadeUp 0.8s ease-out forwards;
-}
-
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-/* Utilities */
-.glass {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-}
-
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-/* Marquee Animation */
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-marquee {
-  display: flex;
-  width: max-content;
-  animation: marquee 40s linear infinite;
-}
-
-.animate-marquee:hover {
-  animation-play-state: paused;
-}
-
-/* Animated dashed border */
-@keyframes dash-march {
-  from { stroke-dashoffset: 0; }
-  to   { stroke-dashoffset: -40; }
-}
-.dash-border-rect {
-  stroke-dasharray: 1 7;
-  animation: dash-march 2.5s linear infinite;
+  padding: 96px 0;
 }
 
 /* Scroll reveal */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
+  transform: translateY(28px);
+  transition: opacity 0.55s cubic-bezier(0.22,1,0.36,1), transform 0.55s cubic-bezier(0.22,1,0.36,1);
+  will-change: opacity, transform;
 }
 .reveal.revealed {
   opacity: 1;
   transform: translateY(0);
 }
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-
-/* Glow pulse — CTA button */
-@keyframes glow-pulse {
-  0%, 100% { box-shadow: 0 0 16px rgba(21,72,93,0.4); }
-  50%       { box-shadow: 0 0 32px rgba(21,72,93,0.75), 0 0 60px rgba(44,200,220,0.15); }
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity 0.55s cubic-bezier(0.22,1,0.36,1), transform 0.55s cubic-bezier(0.22,1,0.36,1);
+  will-change: opacity, transform;
 }
-.animate-glow-pulse {
-  animation: glow-pulse 2.8s ease-in-out infinite;
+.reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition: opacity 0.55s cubic-bezier(0.22,1,0.36,1), transform 0.55s cubic-bezier(0.22,1,0.36,1);
+  will-change: opacity, transform;
+}
+.reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 0.5s cubic-bezier(0.22,1,0.36,1), transform 0.5s cubic-bezier(0.22,1,0.36,1);
+  will-change: opacity, transform;
+}
+.reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fadeUp 0.7s ease-out forwards;
 }
 
-/* Gentle float — hero badge */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Pulse for CTA button */
+@keyframes navy-pulse {
+  0%, 100% { box-shadow: 0 4px 24px rgba(27,58,107,0.25); }
+  50%       { box-shadow: 0 8px 40px rgba(27,58,107,0.45); }
+}
+.animate-navy-pulse {
+  animation: navy-pulse 2.5s ease-in-out infinite;
+}
+
 @keyframes float-gentle {
   0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-5px); }
+  50%       { transform: translateY(-4px); }
 }
 .animate-float-gentle {
   animation: float-gentle 4s ease-in-out infinite;
 }
 
-/* Shimmer border — pricing highlight */
-@keyframes border-shimmer {
-  0%   { opacity: 0.5; }
-  50%  { opacity: 1; }
-  100% { opacity: 0.5; }
+/* Legacy compat */
+.animate-glow-pulse { animation: navy-pulse 2.5s ease-in-out infinite; }
+
+/* 3D relief buttons */
+.btn-3d {
+  position: relative;
+  box-shadow: 0 5px 0 #0d2240, inset 0 1px 0 rgba(255,255,255,0.15);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
-.animate-border-shimmer {
-  animation: border-shimmer 2.5s ease-in-out infinite;
+.btn-3d:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 0 #0d2240, inset 0 1px 0 rgba(255,255,255,0.2);
+}
+.btn-3d:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 #0d2240, inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+.btn-3d-outline {
+  position: relative;
+  box-shadow: 0 5px 0 rgba(27,58,107,0.25);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+.btn-3d-outline:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 0 rgba(27,58,107,0.3);
+}
+.btn-3d-outline:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 rgba(27,58,107,0.2);
 }
