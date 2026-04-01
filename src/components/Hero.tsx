@@ -13,7 +13,7 @@ const Hero = () => {
                         alt="Lionel Canesi"
                         className="w-8 h-8 rounded-full object-cover object-top border-2 border-white shadow-sm"
                     />
-                    <span className="text-[#1B3A6B] text-xs font-semibold pr-1">Accompagnement stratégique pour experts-comptables</span>
+                    <span className="text-[#1B3A6B] text-xs font-semibold pr-1">Accompagnement stratégique pour cabinets d'expertise comptable</span>
                 </div>
 
 
