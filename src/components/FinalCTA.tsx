@@ -1,4 +1,4 @@
-import { ArrowRight, Clock, Lock, Calendar } from 'lucide-react';
+import { ArrowRight, Clock, Calendar } from 'lucide-react';
 
 
 const reassurance = [
