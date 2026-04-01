@@ -6,16 +6,13 @@ const Hero = () => {
 
             <div className="container relative z-10 text-center flex flex-col items-center px-6 pb-28">
 
-                {/* Badge social proof */}
+                {/* Badge photo */}
                 <div className="mb-8 inline-flex items-center gap-1.5 bg-[#1B3A6B]/6 border border-[#1B3A6B]/15 rounded-full px-3 py-1.5 animate-float-gentle">
                     <img
                         src="/personne%201.jpg"
                         alt="Lionel Canesi"
                         className="w-8 h-8 rounded-full object-cover object-top border-2 border-white shadow-sm"
                     />
-                    <span className="text-[#1B3A6B] text-xs font-semibold pr-1">
-                        <span className="text-[#C9963B] font-bold">+</span> de 20 cabinets accompagnés
-                    </span>
                 </div>
 
                 {/* Main title */}
