@@ -14,7 +14,7 @@
         { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), payment=()" },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://r2.leadsy.ai; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://tally.so https://r2.leadsy.ai; frame-src https://tally.so; form-action https://tally.so; base-uri 'self'; object-src 'none';"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://r2.leadsy.ai https://tracker.metricool.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://tracker.metricool.com; connect-src 'self' https://tally.so https://r2.leadsy.ai https://tracker.metricool.com; frame-src https://tally.so; form-action https://tally.so; base-uri 'self'; object-src 'none';"
         }
       ]
     },
