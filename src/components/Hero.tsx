@@ -9,7 +9,7 @@ const Hero = () => {
                 {/* Badge */}
                 <div className="mb-8 inline-flex items-center gap-2 bg-[#1B3A6B]/6 border border-[#1B3A6B]/15 rounded-full px-3 py-1.5 animate-float-gentle">
                     <img
-                        src="/personne%201.jpg"
+                        src="/personne-1.jpg"
                         alt="Lionel Canesi"
                         className="w-8 h-8 rounded-full object-cover object-top border-2 border-white shadow-sm"
                     />

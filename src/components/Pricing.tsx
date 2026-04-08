@@ -17,7 +17,7 @@ const Pricing = () => {
                             {/* Photo */}
                             <div className="md:w-96 lg:w-[420px] flex-shrink-0 bg-[#0a0a0a] overflow-hidden h-64 sm:h-80 md:h-auto md:min-h-[420px]">
                                 <img
-                                    src="/IMG_0017.JPG"
+                                    src="/img-conference.jpg"
                                     alt="Lionel Canesi en conférence"
                                     className="w-full h-full object-cover object-top"
                                     style={{ display: 'block' }}

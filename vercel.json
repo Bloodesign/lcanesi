@@ -2,6 +2,12 @@
   "routes": [
     {
       "src": "/(.*)",
+      "has": [{ "type": "host", "value": "lionelcanesi.com" }],
+      "headers": { "Location": "https://www.lionelcanesi.com/$1" },
+      "status": 301
+    },
+    {
+      "src": "/(.*)",
       "headers": {
         "X-Content-Type-Options": "nosniff",
         "X-Frame-Options": "DENY",

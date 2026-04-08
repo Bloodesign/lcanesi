@@ -14,7 +14,7 @@ const FinalCTA = () => {
 
                 <div className="absolute inset-0">
                     <img
-                        src="/lionel%20canesi.JPG"
+                        src="/lionel-canesi.jpg"
                         alt=""
                         aria-hidden="true"
                         className="w-full h-full object-cover object-center"

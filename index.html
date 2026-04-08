@@ -6,68 +6,169 @@
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Lionel Canesi" />
 
-    <!-- Preconnect + Google Fonts (non-bloquant) -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/personne-1.jpg" />
+
+    <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" href="/personne%201.jpg" />
-    <link rel="apple-touch-icon" href="/personne%201.jpg" />
+    <!-- Google Fonts non-bloquant -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" /></noscript>
 
     <!-- Title -->
     <title>Lionel Canesi — Accompagnement stratégique pour cabinets d'expertise comptable</title>
 
-    <!-- Canonical -->
-    <link rel="canonical" href="https://lionelcanesi.com/" />
+    <!-- Canonical (www) -->
+    <link rel="canonical" href="https://www.lionelcanesi.com/" />
 
-    <!-- Meta description (155 chars max) -->
+    <!-- Meta description -->
     <meta name="description" content="Expert-comptable pendant 25 ans, Lionel Canesi accompagne les dirigeants de cabinets EC à construire leur plan stratégique à 5 ans. Places limitées." />
+
+    <!-- Preload image hero LCP -->
+    <link rel="preload" as="image" href="/lionel-canesi.jpg" fetchpriority="high" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://lionelcanesi.com/" />
+    <meta property="og:url" content="https://www.lionelcanesi.com/" />
     <meta property="og:locale" content="fr_FR" />
     <meta property="og:site_name" content="Lionel Canesi" />
     <meta property="og:title" content="Lionel Canesi — Accompagnement stratégique pour cabinets d'expertise comptable" />
     <meta property="og:description" content="Expert-comptable pendant 25 ans, Lionel Canesi accompagne les dirigeants de cabinets EC à construire leur plan stratégique à 5 ans. Places limitées." />
-    <meta property="og:image" content="https://lionelcanesi.com/lionel%20canesi.JPG" />
+    <meta property="og:image" content="https://www.lionelcanesi.com/lionel-canesi.jpg" />
     <meta property="og:image:alt" content="Lionel Canesi — Accompagnement stratégique pour experts-comptables" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Lionel Canesi — Accompagnement stratégique pour cabinets d'expertise comptable" />
     <meta name="twitter:description" content="Expert-comptable pendant 25 ans, Lionel Canesi accompagne les dirigeants de cabinets EC à construire leur plan stratégique à 5 ans. Places limitées." />
-    <meta name="twitter:image" content="https://lionelcanesi.com/lionel%20canesi.JPG" />
+    <meta name="twitter:image" content="https://www.lionelcanesi.com/lionel-canesi.jpg" />
 
-    <!-- Schema Markup -->
+    <!-- Schema JSON-LD @graph -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Lionel Canesi",
-      "url": "https://lionelcanesi.com",
-      "description": "Lionel Canesi accompagne les dirigeants de cabinets d'expertise comptable dans la construction de leur plan stratégique à 5 ans, l'intégration des outils numériques et le développement commercial.",
-      "image": "https://lionelcanesi.com/lionel%20canesi.JPG",
-      "priceRange": "Sur devis",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "6419 Avenue Marcel Matteoda",
-        "addressLocality": "Cabrières",
-        "postalCode": "13480",
-        "addressCountry": "FR"
-      },
-      "founder": {
-        "@type": "Person",
-        "name": "Lionel Canesi",
-        "jobTitle": "Consultant stratégique en cabinet d'expertise comptable",
-        "description": "Expert-comptable pendant 25 ans, ancien président de l'Ordre des Experts-Comptables PACA."
-      }
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://www.lionelcanesi.com/#website",
+          "url": "https://www.lionelcanesi.com",
+          "name": "Lionel Canesi",
+          "inLanguage": "fr-FR",
+          "publisher": { "@id": "https://www.lionelcanesi.com/#person" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://www.lionelcanesi.com/#person",
+          "name": "Lionel Canesi",
+          "url": "https://www.lionelcanesi.com",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.lionelcanesi.com/lionel-canesi.jpg"
+          },
+          "jobTitle": "Consultant stratégique en cabinet d'expertise comptable",
+          "description": "Expert-comptable pendant 25 ans, ancien président de l'Ordre des Experts-Comptables PACA. Accompagne les dirigeants de cabinets d'expertise comptable dans la construction de leur plan stratégique à 5 ans.",
+          "knowsAbout": [
+            "Stratégie cabinet d'expertise comptable",
+            "Transformation numérique cabinet comptable",
+            "Développement commercial cabinet EC",
+            "Plan stratégique 5 ans"
+          ],
+          "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Consultant stratégique",
+            "occupationLocation": { "@type": "Country", "name": "France" }
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "6419 Avenue Marcel Matteoda",
+            "addressLocality": "Cabrières",
+            "postalCode": "13480",
+            "addressCountry": "FR"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/in/lionel-canesi/",
+            "PLACEHOLDER_OECCA_URL"
+          ],
+          "worksFor": { "@id": "https://www.lionelcanesi.com/#organization" }
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://www.lionelcanesi.com/#organization",
+          "name": "Lionel Canesi Conseil",
+          "url": "https://www.lionelcanesi.com",
+          "telephone": "PLACEHOLDER_TELEPHONE",
+          "email": "PLACEHOLDER_EMAIL",
+          "priceRange": "Sur devis",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.lionelcanesi.com/lionel-canesi.jpg"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "6419 Avenue Marcel Matteoda",
+            "addressLocality": "Cabrières",
+            "postalCode": "13480",
+            "addressCountry": "FR"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "43.5297",
+            "longitude": "5.0542"
+          },
+          "areaServed": { "@type": "Country", "name": "France" },
+          "openingHoursSpecification": [{
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          }],
+          "founder": { "@id": "https://www.lionelcanesi.com/#person" },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Offres de conseil",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Plan stratégique à 5 ans",
+                  "description": "Construction du plan stratégique à 5 ans pour cabinet d'expertise comptable"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Développement commercial",
+                  "description": "Accompagnement au développement commercial du cabinet"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Transformation numérique",
+                  "description": "Intégration des outils numériques dans le cabinet"
+                }
+              }
+            ]
+          },
+          "sameAs": [
+            "https://www.linkedin.com/in/lionel-canesi/",
+            "PLACEHOLDER_OECCA_URL"
+          ]
+        }
+      ]
     }
     </script>
 
-    <!-- Metricool Analytics -->
-    <script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"1f1c3ed048a835b216095cec393195c2"})});</script>
+    <!-- Metricool Analytics (async) -->
+    <script async>
+      function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"1f1c3ed048a835b216095cec393195c2"})});
+    </script>
 
     <!-- Instantly Pixel -->
     <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="Os5tP584BqK4zzuV" data-version="062024"></script>

@@ -51,7 +51,7 @@ const Parcours = () => {
             {/* ── PHOTO IMMERSIVE ── */}
             <div className="relative w-full overflow-hidden" style={{ height: '480px' }}>
                 <img
-                    src="/IMG_0017.JPG"
+                    src="/img-conference.jpg"
                     alt="Lionel Canesi en conférence"
                     className="w-full h-full object-cover object-center"
                     style={{ display: 'block' }}
